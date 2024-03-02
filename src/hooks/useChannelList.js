@@ -4,7 +4,6 @@ import { getChannelData } from "../utils/store/videoSlice";
 import { useDispatch } from "react-redux";
 
 const useChannelList = (id) => {
-  console.log(id);
   const dispatch = useDispatch();
   const channels = async () => {
     try {

@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 import SearchSlice from "./SearchSlice";
+import ChatSlice from "./ChatSlice";
 
 const persistConfig1 = {
   key: 'videoSlice',
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   videos: persistedReducer1,
   app:appSlice,
   search:SearchSlice,
+  chat:ChatSlice,
 });
 
 

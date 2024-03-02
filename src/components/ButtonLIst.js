@@ -1,8 +1,9 @@
 import React from 'react'
 import Button from './Button'
 
+
 const ButtonLIst = () => {
-   const List=["All","Songs","Gaming","Live","Football","Cricket","Cooking","Recently uploaded","Python","Wildlife","Cars","News"];
+   const List=["All","Songs","Gaming","Live","Football","Cricket","Cooking","Recently uploaded","Python","Wildlife","Cars","News","Movies","Travel"];
 
   return (
     <div className='flex mt-16'>
@@ -10,5 +11,6 @@ const ButtonLIst = () => {
     </div>
   )
 }
+
 
 export default ButtonLIst

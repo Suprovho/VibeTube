@@ -4,12 +4,12 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
 }
  
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: white;
 }
  
 /* Handle */
@@ -25,4 +25,15 @@
 
 .description a {
     color: blue;
+  }
+
+.sidebar{
+    transition: left 0.3s ease, background-color 0.3s ease;;
+    z-index: 999;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+
+.sidebar.open {
+    left: 0;
   }

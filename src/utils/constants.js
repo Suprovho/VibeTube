@@ -72,3 +72,7 @@ export const renderParagraphWithLinks = (apiResponse) => {
 
 export const YOUTUBE_SEARCH_API="http://suggestqueries.google.com/complete/search?client=youtube&ds=yt&client=firefox&q=";
 
+export const LIVE_CHAT_COUNT=10;
+
+export const logo="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg";
+

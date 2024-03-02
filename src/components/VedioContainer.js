@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import { YOUTUBE_VIDEOS_API } from "../utils/constants";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getVideoData } from "../utils/store/videoSlice";
 
 
 const VedioContainer = () => {
 
   const dispatch = useDispatch();
-
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -28,7 +27,7 @@ const VedioContainer = () => {
     <div className="flex flex-wrap">
       {videos.map((video) => (
         <Link  key={video.id} to={"/watch?v=" + video.id}>
-          <VideoCard  info={video} />
+          <VideoCard  info={video}  />
         </Link>
       ))}
     </div>

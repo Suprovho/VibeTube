@@ -29,13 +29,13 @@ const SideBar = () => {
 
  
   return (
-    <div className="flex flex-col w-[15%] p-2  flex-wrap text-wrap mt-12">
+    <div className={`flex  flex-col w-[15%] p-4 top-14   text-wrap  fixed  left-[100%] h-dvh shadow-xl overflow-y-auto bg-gray-50  sidebar ${isMenuOpen ? 'open' : ''}`}>
       <ul className="flex flex-col w-full p-4 gap-4">
-        <li className="flex items-center gap-4 hover:font-bold cursor-pointer">
+        <li className="flex items-center gap-4  hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <Home />
           <Link to={"/"}>Home</Link>
         </li>
-        <li className="flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className="flex items-center gap-4  hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -48,66 +48,66 @@ const SideBar = () => {
           </svg>
           Shorts
         </li>
-        <li className="flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className="flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <UserCheck />
           Subscriptions
         </li>
       </ul>
       <hr className="h-[0.5px] bg-black border-none opacity-20"/>
       <ul className="flex flex-col w-full p-4 gap-4">
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <Library />
           Library
         </li>
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <History />
           History
         </li>
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <Clock />
           Watch later
         </li>
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <ThumbsUp />
           Liked videos
         </li>
       </ul>
       <hr className="h-[0.5px] mb-2 bg-black border-none opacity-20"/>
-      <h2 className="m-0 p-0 font-medium">Subscriptions</h2>
+      <h2 className="m-0 p-0 font-medium text-wrap">Subscriptions</h2>
       <ul className="flex flex-col w-full p-4 gap-4">
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <Music />
           Music
         </li>
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <Trophy />
          sports
         </li>
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <Gamepad2 />
           Gaming
         </li>
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <Clapperboard />
          Movies
         </li>
       </ul>
       <hr className="h-[0.5px] mb-2 bg-black border-none opacity-20"/>
       <h2 className="m-0 p-0 font-medium">Explore</h2>
-      <ul className="flex flex-col w-full p-4 gap-4">
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+      <ul className="flex flex-col w-full p-4 gap-4 mb-10">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <Flame />
           Trending
         </li>
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <ShoppingBag />
          Shopping
         </li>
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4   hover:shadow-inner p-2 hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <Radio />
           Live
         </li>
-        <li className=" flex items-center gap-4  hover:font-bold cursor-pointer">
+        <li className=" flex items-center gap-4  p-2    hover:shadow-inner  hover:bg-gray-100 hover:rounded-md cursor-pointer">
           <Podcast />
          Podcasts
         </li>

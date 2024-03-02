@@ -53,7 +53,7 @@ const SearchResults = () => {
   useChannelList(channelIds);
 
   return (
-    <div className="mt-16 p-2 flex flex-col gap-3  w-full">
+    <div className="mt-16 ml-10 flex flex-col gap-3  w-full">
       {SearchData.map((video) => (
         <Link key={video.id.videoId} to={"/watch?v=" + video.id.videoId}>
           <ResultCard key={video.snippet.channelId} info={video} />

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { CircleUserRound, Menu, Search } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchCall, setSearchName, toggleMenu } from "../utils/store/appSlice";
-import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { YOUTUBE_SEARCH_API, logo } from "../utils/constants";
 import { CacheResults } from "../utils/store/SearchSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -110,11 +110,13 @@ const Header = () => {
           onClick={() => toggleMenuHandler()}
           absoluteStrokeWidth={true}
         />
+        <Link to={"/"} >
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+          src={logo}
           alt="YTlogo"
-          className="w-[20%]"
+          className="w-[20%] cursor-pointer"
         />
+        </Link>
       </div>
       <div className="flex  w-full justify-start items-center -translate-x-20">
         <input
