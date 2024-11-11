@@ -5,7 +5,9 @@ import { setSearchCall, setSearchName, toggleMenu } from "../utils/store/appSlic
 import { YOUTUBE_SEARCH_API, logo } from "../utils/constants";
 import { CacheResults } from "../utils/store/SearchSlice";
 import { Link, useNavigate } from "react-router-dom";
+
 const Header = () => {
+  
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);

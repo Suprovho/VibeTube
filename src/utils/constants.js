@@ -1,8 +1,7 @@
 export const GOOGLE_API_KEY = "AIzaSyCM6YQ2FuqBcRlSWKKpDgFk88dTqojTRL0";
 
 export const YOUTUBE_VIDEOS_API =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
-  GOOGLE_API_KEY;
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50"
 
 export const formatViewCount = (viewCount) => {
   if (viewCount >= 1000000) {
@@ -13,6 +12,21 @@ export const formatViewCount = (viewCount) => {
     return viewCount.toString();
   }
 };
+
+  // List of category IDs
+  const popularRegionCodes = [
+    "US", "IN", "GB", "CA", "AU", "BR", "FR", "DE", "KR", "MX",
+    "JP", "IT", "RU", "ES", "ZA", "NG", "PL", "AR", "PH", "ID",
+    "EG", "TH", "PK", "IT", "VN", "SA", "TR", "CL", "CO", "UA",
+    "MY", "PE", "NG", "SG", "KR", "NG", "ZA", "UA", "PK", "TW",
+    "KH", "DZ", "RO", "PT", "TZ", "AE", "HN", "KE", "LB", "LK",
+    "KR", "LY", "GH", "HN", "TZ", "BG", "DO", "PR", "MT"
+  ];
+
+ export const getRandomRegionId = () => {
+    const randomIndex = Math.floor(Math.random()*popularRegionCodes.length);
+    return popularRegionCodes[randomIndex];  
+  };
 
 export function convertToNumber(number) {
   return Number(number).toLocaleString();
