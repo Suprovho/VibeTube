@@ -72,7 +72,8 @@ const Header = () => {
    */
 
   const getSearchSuggestion = async () => {
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    const data = await fetch(proxyUrl + YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
     setSuggestions(json[1]);
     dispatch(
@@ -81,6 +82,7 @@ const Header = () => {
       })
     );
   };
+  
 
   const selectItem = (item) => {
     setSearchQuery(item);
