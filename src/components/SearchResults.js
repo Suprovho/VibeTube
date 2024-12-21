@@ -5,10 +5,9 @@ import { GOOGLE_API_KEY } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useVideos from "../hooks/useVideos";
 import useChannelList from "../hooks/useChannelList";
+import Shimmer from "./Shimmer";
 
 const SearchResults = () => {
-  //TODO: search api call , build result page .. after exammm..
-
   const [SearchData, setSearchData] = useState([]);
   const [isComponentMounted, setComponentMounted] = useState(true);
 
@@ -20,7 +19,8 @@ const SearchResults = () => {
   const Results = async () => {
     const data = await fetch(
       "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=" +
-        SearchResult +"&type=video"+
+        SearchResult +
+        "&type=video" +
         "&key=" +
         GOOGLE_API_KEY
     );
@@ -53,13 +53,13 @@ const SearchResults = () => {
   useChannelList(channelIds);
 
   return (
-    <div className="mt-16 ml-10 flex flex-col gap-3  w-full">
-      {SearchData.map((video) => (
-        <Link key={video.id.videoId} to={"/watch?v=" + video.id.videoId}>
-          <ResultCard key={video.snippet.channelId} info={video} />
-        </Link>
-      ))}
-    </div>
+<div className="mt-16 md:ml-10 flex flex-col gap-10 md:gap-3 w-full overflow-x-hidden">
+  {SearchData.map((video) => (
+    <Link key={video.id.videoId} to={"/watch?v=" + video.id.videoId}>
+      <ResultCard key={video.snippet.channelId} info={video} />
+    </Link>
+  ))}
+</div>
   );
 };
 

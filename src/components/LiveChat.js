@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addMessage } from "../utils/store/ChatSlice";
 import { LiveChats } from "../utils/mockData/LiveChat";
 import EmojiPicker from "emoji-picker-react";
+import Sugesstion from "./Sugesstion";
 
 const LiveChat = () => {
   const [liveMessage, setLiveMessage] = useState("");
@@ -17,7 +18,7 @@ const LiveChat = () => {
 
     const addMessageWithDelay = () => {
       dispatch(addMessage([LiveChats[index]]));
-      index = (index + 1) % LiveChats.length; // start from 0 again..
+      index = (index + 1) % LiveChats.length; // start from 0 again
     };
 
     const i = setInterval(addMessageWithDelay, 2000);
@@ -26,12 +27,12 @@ const LiveChat = () => {
   }, []);
 
   if (!ChatMesg) {
-    return null; // Add a check for undefined or null comments
+    return null; 
   }
 
   return (
-    <div className="flex flex-col w-[30%] text-wrap flex-wrap">
-      <div className="w-full mt-[88px] mr-4 h-[480px] border-[#e4e4e4] border-2  rounded-lg shadow-md  text-wrap flex-wrap overflow-y-scroll">
+    <div className="flex flex-col md:w-[30%] text-wrap flex-wrap overflow-hidden">
+      <div className="w-full md:mt-[88px] mr-4 h-[480px] border-[#e4e4e4] border-2  rounded-lg shadow-md  text-wrap flex-wrap overflow-y-scroll">
         <h1 className="border-b-2 border-[#e4e4e4] p-4 inline-flex items-center w-full text-[17px] bg-white shadow-sm sticky top-0">
           Top chat <ChevronDown strokeWidth={1} />
         </h1>
@@ -50,7 +51,6 @@ const LiveChat = () => {
         className="p-2 w-full  border-[#e4e4e4] border-2  rounded-lg shadow-md "
         onSubmit={(e) => {
           e.preventDefault();
-
           dispatch(
             addMessage([
               {
@@ -96,6 +96,8 @@ const LiveChat = () => {
         }}
         className="absolute z-20"
       />
+        <h1 className="md:invisible font-bold text-lg p-2">Recommendations</h1>
+      <Sugesstion />
     </div>
   );
 };
