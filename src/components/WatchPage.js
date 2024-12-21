@@ -12,6 +12,7 @@ import {
 import { ArrowDownToLine, Share2, ThumbsDown, ThumbsUp } from "lucide-react";
 import LiveChat from "./LiveChat";
 import CommentSection from "./CommentSection";
+import Shimmer from "./Shimmer";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -34,6 +35,10 @@ const WatchPage = () => {
     filterData[0]?.snippet?.description
   );
   const [isExpanded, setIsExpanded] = useState(false);
+
+  if(!channelData||!filterData||!videoData){
+    return <div className="mt-16 flex justify-center items-center"><Shimmer /></div>;
+  }
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
