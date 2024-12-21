@@ -16,33 +16,41 @@ import Shimmer from "./Shimmer";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(closeMenu());
-  }, []);
+  }, [dispatch]);
 
   const videoData = useSelector((store) => store?.videos?.videoData);
   const videoId = searchParams.get("v");
-  const filterData = videoData.filter((data) => data?.id === videoId);
+
+  const filterData = videoData?.filter((data) => data?.id === videoId) || [];
   const channelId = filterData[0]?.snippet?.channelId;
+
   useChannelList(channelId);
 
   const channelData = useSelector(
-    (store) => store?.videos?.channelData[0] || null
+    (store) => store?.videos?.channelData?.[0] || null
   );
-  const initialContent = renderParagraphWithLinks(
-    filterData[0]?.snippet?.description
-  );
-  const [isExpanded, setIsExpanded] = useState(false);
 
-  if(!channelData||!filterData||!videoData){
-    return <div className="mt-16 flex justify-center items-center"><Shimmer /></div>;
-  }
+  const initialContent = renderParagraphWithLinks(
+    filterData[0]?.snippet?.description || ""
+  );
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
+
+  if (!channelData || !filterData.length || !videoData) {
+    return (
+      <div className="mt-16 flex justify-center items-center">
+        <Shimmer />
+      </div>
+    );
+  }
 
   return (
     channelData && (

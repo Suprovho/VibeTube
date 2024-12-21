@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dayjs": "^1.11.13",
     "dotenv": "^16.4.7",
     "emoji-picker-react": "^4.8.0",
     "lucide-react": "^0.312.0",

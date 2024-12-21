@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 export const YOUTUBE_VIDEOS_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50";
 
@@ -86,39 +88,15 @@ export function convertToNumber(number) {
 export function currentDateTime(props) {
   let dateString = props;
 
-  // Convert the string to a JavaScript Date object
-  let date = new Date(dateString);
-
-  // Get the current date
-  let currentDate = new Date();
-
-  // Calculate the time difference in milliseconds
-  let timeDifference = currentDate - date;
-
-  // Format the date
-  let formattedDate = new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-  }).format(date);
-
-  console.log(formattedDate);
-
-  // Calculate the time difference in hours
-  let hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
-
-  // Generate the output based on the time difference
-  let output;
-  if (hoursDifference < 24) {
-    output = `${hoursDifference} hours ago`;
-  } else {
-    output = `${formattedDate}`;
+  if (!dayjs(dateString).isValid()) {
+    console.error("Invalid date string:", dateString);
+    return "Invalid Date";
   }
 
-  return output;
+  let formattedDate = dayjs(dateString).format("MMM D, YYYY, h:mm A");
+  return formattedDate;
 }
+
 
 export const renderParagraphWithLinks = (apiResponse) => {
   if (!apiResponse) {
