@@ -49,7 +49,7 @@ vibeTube is a YouTube-inspired video streaming platform designed for seamless vi
    ```
 2. Navigate to the project directory:
    ```bash
-   cd vibeTube
+   cd VibeTube
    ```
 3. Install dependencies:
    ```bash
